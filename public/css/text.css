@@ -9,6 +9,10 @@ html{
 	background-size:cover;
 }
 
+.mp_name_class {
+color: #f91212;
+}
+
 body{
 	/* Workaround for some mobile browsers */
 	min-height:100%;

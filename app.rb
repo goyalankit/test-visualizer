@@ -20,6 +20,6 @@ get '/:mp_name/:test_class/:test_method' do
 end
 
 get '/:mp_name/test_method' do
-  
+
 end
 
