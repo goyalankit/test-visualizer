@@ -1,4 +1,22 @@
 <div class="container">
+  <a href="/<%=@mp_name%>">click to go back</a>
   <div class="page-header">
-    This page can be used to show history of <span class="mp_name_class"><%=params[:test_method]%></span> in <span class="mp_name_class"><%=params[:test_class]%></span>
+    Execution history of <span class="mp_name_class"><%=params[:test_method]%></span> in <span class="mp_name_class"><%=params[:test_class]%></span>
+  </div>
+
+  <div id="chart-example-chart"></div>
+  <div class="col-md-4 text-center" id="toggle-chart-button">
+    <a class="btn primary btn-info" id="toggle-chart-table">Show Table to Sort the Chart Series</a>
+  </div>
+  <br/><br/>
+  <table id="chart-example" class="table table-bordered">
+    <thead><tr><th>Date</th><th>Passed</th><th>Failed</th></tr></thead>
+    <tbody>
+    <% @test_data.each do |data| %>
+      <tr><td><%=data[:date]%></td><td><%=data[:passed]%></td><td><%=data[:failed]%></td></tr>
+  <% end %>
+    </tbody>
+  </table>
 </div>
+
+<script type="text/javascript" src="/js/class_test_method.js"></script>

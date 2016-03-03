@@ -1,9 +1,7 @@
 require 'sinatra'
 
-get '/:mp_name' do
+get '/:mp_name/?' do
   @mp_name = params[:mp_name]
-
-  @name = ENV['USER']
 
   @test_data = [
     {class: "LoginViewTests", method: "testHappyPath", pass: 12, fail: 54, days: 40},
@@ -13,9 +11,14 @@ get '/:mp_name' do
   erb :main
 end
 
-get '/:mp_name/:test_class/:test_method' do
-  @mp_name = "cool"
-  @test_data = []
+get '/:mp_name/:test_class/:test_method/?' do
+  @mp_name = params[:mp_name]
+  @test_data = [
+    {date: "2016-23-12", passed: 45, failed: 32},
+    {date: "2016-23-11", passed: 13, failed: 21},
+    {date: "2016-23-10", passed: 33, failed: 12},
+    {date: "2016-23-09", passed: 53, failed: 45},
+  ]
   erb :class_test_method
 end
 
