@@ -22,6 +22,10 @@ get '/:mp_name/:test_class/:test_method/?' do
   erb :class_test_method
 end
 
+get '/?' do
+  erb :index
+end
+
 get '/:mp_name/test_method' do
 
 end
