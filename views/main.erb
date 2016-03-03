@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Test history for <%= @mp_name %> over last 30 days</h1>
+  </div>
+  <table class="table table-bordered mytable">
+    <thead>
+      <tr>
+        <th>Test Class</th>
+        <th>Method</th>
+        <th>Pass</th>
+        <th>Fail</th>
+        <th>Days</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @test_data.each do |data|%>
+      <tr>
+      <td><%=data[:class]%></td>
+      <td><a href="/<%=@mp_name%>/<%= data[:class]%>/<%= data[:method] =%>"><%=data[:method]%></a></td>
+      <td><%=data[:pass]%></td>
+      <td><%=data[:fail]%></td>
+      <td><%=data[:days]%></td>
+    </tr>
+  <%end%>
+    </tbody>
+  </table>
+
+
+  <script>
+$('.mytable').dynatable({
+table: {
+defaultColumnIdStyle: 'trimDash'
+}
+});
+  </script>
+
