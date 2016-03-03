@@ -16,7 +16,7 @@
     <% @test_data.each do |data|%>
       <tr>
       <td><%=data[:class]%></td>
-      <td><a href="/<%=@mp_name%>/<%= data[:class]%>/<%= data[:method] =%>"><%=data[:method]%></a></td>
+      <td><a href="/<%=@mp_name%>/<%=data[:class]%>/<%= data[:method]%>"><%=data[:method]%></a></td>
       <td><%=data[:pass]%></td>
       <td><%=data[:fail]%></td>
       <td><%=data[:days]%></td>
